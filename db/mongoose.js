@@ -1,8 +1,10 @@
 const mongoose=require('mongoose')
 
-//mongoose.connect('mongodb://localhost:27017/Techokids',{
-    console.log(process.env.URL)
-mongoose.connect('mongodb+srv://vish:vish@cluster0.bdsio.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+console.log('Mong ',process.env.MONGODB_URL)
+
+mongoose.connect(process.env.MONGODB_URL||'mongodb://localhost:27017/Techokids',{
+   
+
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
