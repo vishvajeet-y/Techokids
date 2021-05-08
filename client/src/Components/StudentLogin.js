@@ -16,13 +16,14 @@ const StudentLogin=(props)=>{
      // console.log(msg)
       const  message_val=msg.data.flag
       const token=msg.data.token
+      const firstname=msg.data.firstname
       setMessage(msg.data.flag)
      
      if(message_val===1)
      {
        props.history.push({
         pathname:'/Classroom',
-        state:{token,type:'Student'}
+        state:{token,type:'Student',firstname}
        })
      }
     })

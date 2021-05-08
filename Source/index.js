@@ -15,8 +15,7 @@ app.use(saveAttendence)
 
 //console.log(process.env)
 
-//console.log('ENV ',process.env.NODE_ENV)
-
+// console.log('ENV ',process.env.NODE_ENV)
 // if(process.env.NODE_ENV==='production')
 // {
 app.use(express.static(path.join(__dirname, "../client", "build")));

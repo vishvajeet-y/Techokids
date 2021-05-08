@@ -4,6 +4,7 @@ const TeacherSidebar=(props)=>{
   //console.log('Nav',props)
   const token=props.token
   const type=props.type
+  const firstname=props.firstname
 return  <nav className="navbar navbar-expand-lg navbar-light bg-light">
 <div className="container-fluid">
   <NavLink className="navbar-brand" to="/">Techokids</NavLink>
@@ -26,7 +27,8 @@ return  <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <NavLink className="nav-link active" aria-current="page" to={{
         pathname: '/stu_dashboard',
         state: {
-          token
+          token,
+           firstname
         }
       }}
       activeClassName='is-active' exact={true}> Student Dashboard </NavLink>
@@ -36,15 +38,31 @@ return  <nav className="navbar navbar-expand-lg navbar-light bg-light">
         
       </li>
    
-      <li className="nav-item ">
-        <NavLink className="nav-link" to={{
+  
+
+      <li className="nav-item">
+      {
+          type==='Teacher'?
+          <NavLink className="nav-link" to={{
             pathname: '/classroom',
             state: {
               token,
               type
             }
+          }}>Classroom</NavLink>:
+          <NavLink className="nav-link" to={{
+            pathname: '/classroom',
+            state: {
+              token,
+              type,
+              firstname
+            }
           }}>Classroom</NavLink>
+        }
+      
+        
       </li>
+
       
       <li className="nav-item">
       {

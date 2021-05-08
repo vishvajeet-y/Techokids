@@ -10,6 +10,7 @@ const Classroom=(props)=>{
     const token=props.location.state.token  
     const type=props.location.state.type
     const take=props.location.state.Take
+    const firstname=props.location.state.firstname
     //console.log('clas',type)
     const [students,setStudents]=useState([])
     const getStudent=(token)=>{
@@ -84,7 +85,9 @@ const Classroom=(props)=>{
 
     return <div>
     
-    <Navbar token={token} type={type}/>
+    {(type==='Teacher')?
+    <Navbar token={token} type={type} />:
+    <Navbar token={token} type={type} firstname={firstname}/>}
     <div className="container-fluid align-self-center">
     <div className="row">
     <div className="col-sm-3"></div>

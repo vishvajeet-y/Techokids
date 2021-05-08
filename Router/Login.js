@@ -15,7 +15,8 @@ router.post('/stu_login',async(req,res)=>{
      const token=await  student.generateAuthToken()
      //console.log(student)
      const flag=1
-      res.send({flag,token})
+     const firstname=student.firstname
+      res.send({flag,token,firstname})
      }
      catch(e){
          console.log(e)
