@@ -34,7 +34,7 @@ const StudentLogin=(props)=>{
 
    return <div>
    <Header />
-   {message===0?'some error occur':''}
+   {message===0?<p className="text-center text-danger">Either username or password is wrong </p>:''}
     <LoginForm onSubmitForm={onSubmitForm}/>
     
     </div>

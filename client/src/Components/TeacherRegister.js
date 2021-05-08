@@ -33,7 +33,7 @@
   return  <div>
   <Header />
   
-    {message===0?'some error occur':''}
+    {message===0?<p className="text-center text-danger">Fill form correctly</p>:''}
     <RegisterForm onSubmitForm={onSubmitForm}/>
     </div>
   }
